@@ -28,14 +28,14 @@ Functional annotations were carried out in our in house pipeline (KEGG-based) an
 
 
 
-##Data analysis custom scripts
+## Data analysis custom scripts
 
-###Statistics
-
-
-###Correlations 
+### Statistics
 
 
-##Command options for other tools
+### Correlations 
 
-##Figure guide
+
+## Command options for other tools
+
+## Figure guide
