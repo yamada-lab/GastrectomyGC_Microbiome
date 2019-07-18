@@ -17,6 +17,16 @@ Functional annotations were carried out in our in house pipeline (KEGG-based) an
 
 ### HUMAnN2
 
+Custom scripts for runing in SGE system:  `HUMAnN2_pipeline.sh`.
+For runing the scripts you need to specify
+The format of the high quality reads should be `Sample_ID.samenames.fastq` or `Sample_ID.samenames.fastq.gz`
+..*`$1` : Sample ID
+..*`$2` : directory for the output
+..*`$3` : directory for the high quality reads
+
+Example usage
+```qsub -l mem=4G -pe smp 8 HUMAnN2_pipeline.sh <sequence_id> <directory_out> <directory_in>```
+
 
 ## Other annotations
 ### Oral microbes
