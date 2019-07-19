@@ -44,19 +44,34 @@ qsub -l mem=4G -pe smp 8 HUMAnN2_pipeline.sh <sequence_id> <directory_out> <dire
 ## Data analysis custom scripts
 
 ### Statistics
-* **LEfSe**
+* **Univariate statistic for differential relative abundance analysis**
 
-The differences in microbiome features (taxonomy, KO modules) relative abundance were calculated by linear discriminant analysis (LDA) effect size [LEfSe](https://bitbucket.org/biobakery/biobakery/wiki/lefse). LEfSe first identifies features that are statistically different between healthy and gastrectomy groups using the non-parametric Kruskal–Wallis sum-rank test (P≤0.05). We modified the default calculation by controlling the multiple testing using Benjamini–Hochberg (BH) false discovery rate (FDR) correction procedure. All of the modification can be found in `LEfSe_Modif`.
+We run [LEfSe](https://bitbucket.org/biobakery/biobakery/wiki/lefse) and MaAsLin [MaAsLin R package](https://bitbucket.org/biobakery/maaslin/src/default/) for univariate statistis as explained below. 
+    * **LEfSe**
 
-* **MaAsLin**
+    The differences in microbiome features (taxonomy, KO modules) relative abundance were calculated by linear discriminant analysis (LDA) effect size [LEfSe](https://bitbucket.org/biobakery/biobakery/wiki/lefse). LEfSe first identifies features that are statistically different between healthy and gastrectomy groups using the non-parametric Kruskal–Wallis sum-rank test (P≤0.05). We modified the default calculation by controlling the multiple testing using Benjamini–Hochberg (BH) false discovery rate (FDR) correction procedure. All of the modification can be found in `LEfSe_Modif`.
 
-The associations coefficient (variance explained) between the demographic data (groups, age, gender, smoking status, alcohol consumption status, and BMI) as explanatory variables and the detected microbial features as response were tested by the [MaAsLin R package](https://bitbucket.org/biobakery/maaslin/src/default/).  
+    * **MaAsLin**
+
+    The associations coefficient (variance explained) between the demographic data (groups, age, gender, smoking status, alcohol consumption status, and BMI) as explanatory variables and the detected microbial features as response were tested by the [MaAsLin R package](https://bitbucket.org/biobakery/maaslin/src/default/).  
+To run the analysis simustaneusly we use....
+
+>>>
+packages:
+
+input:
+
+outputs
+
+>>>
+
 
 * **Statistical differences in demographic data**
 
 The statistical differences were tested for the demographic data between healthy control and gastrectomy group to test the nature of the confounding factors. The two-sided MWU test (scipy.stats.mannwhitneyu version 0.18.1) was performed on numerical data (BMI, age, and dietary component information) and Fisher’s exact test (FisherExact 1.4.2) was performed on categorical data (gender, smoking status, and alcohol consumption status).
-The script (writen in python 2.7.13) can be found in `Statistical_Analysis/Metadata_stats.py`. The package needed to run the scipt
+The script (writen in python 2.7.13) can be found in `Statistical_Analysis/Metadata_stats.py`.
 >>>
+packages:
 * matplotlib
 * pandas
 * numpy
@@ -66,6 +81,13 @@ The script (writen in python 2.7.13) can be found in `Statistical_Analysis/Metad
 * FisherExact
 * math
 * collections
+
+input:
+* metadata table in .tsv format
+
+outputs:
+* statistical test (p value)
+* boxplot
 >>>
 
 usage:
