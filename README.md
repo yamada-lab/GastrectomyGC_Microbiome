@@ -113,7 +113,7 @@ We estimated the microbial association in each of group using [SparCC](https://b
 Custom script for runing in SGE system were available at `Data_Analysis/SparCC_corr.sh`
 usage:
 ```bash
-qsub -cwd Data_Analysis/SparCCAllSpec.sh <Species/genus_relative abundance table> <List of selected species/genus>
+qsub -cwd Data_Analysis/SparCC_corr.sh <Species/genus_relative abundance table> <List of selected species/genus>
 ```
 After the calculations, the results were visualized using [igraph R packages](https://igraph.org/r/) and the script were available here `insert the script` 
 * 
