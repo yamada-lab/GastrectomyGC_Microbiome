@@ -7,6 +7,13 @@ import itertools
 
 #import svmutil
 
+
+####Notes###
+#Modifications by Erawijantari-Titech
+#script were modified from the original LefSe script
+#modifications enable the FDR calculations
+#All of the modifications were marked with "###"
+
 def init(): 
 	lrand.seed(1982)
 	robjects.r('library(splines)')
@@ -286,7 +293,4 @@ def test_svm(cls,feats,cl_sl,boots,fract_sample,lda_th,tol_min,nsvm):
 
 
 
-####Notes###
-#script were modified from the original LefSe script
-#modifications enable the FDR calculations
-#All of the modifications will be marked with "###"
+
