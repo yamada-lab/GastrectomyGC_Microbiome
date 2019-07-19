@@ -56,15 +56,14 @@ qsub -l mem=4G -pe smp 8 HUMAnN2_pipeline.sh <sequence_id> <directory_out> <dire
 
 ### Statistics
 * **Univariate statistic for differential relative abundance analysis**
-
-We run [LEfSe](https://bitbucket.org/biobakery/biobakery/wiki/lefse) and MaAsLin [MaAsLin R package](https://bitbucket.org/biobakery/maaslin/src/default/) for univariate statistis as explained below. 
-    * **LEfSe**
+    *  **LEfSe**
 
     The differences in microbiome features (taxonomy, KO modules) relative abundance were calculated by linear discriminant analysis (LDA) effect size [LEfSe](https://bitbucket.org/biobakery/biobakery/wiki/lefse). LEfSe first identifies features that are statistically different between healthy and gastrectomy groups using the non-parametric Kruskal–Wallis sum-rank test (P≤0.05). We modified the default calculation by controlling the multiple testing using Benjamini–Hochberg (BH) false discovery rate (FDR) correction procedure. All of the modification can be found in `LEfSe_Modif`.
 
-    * **MaAsLin**
+    *  **MaAsLin**
 
-    The associations coefficient (variance explained) between the demographic data (groups, age, gender, smoking status, alcohol consumption status, and BMI) as explanatory variables and the detected microbial features as response were tested by the [MaAsLin R package](https://bitbucket.org/biobakery/maaslin/src/default/).  
+    The associations coefficient (variance explained) between the demographic data (groups, age, gender, smoking status, alcohol consumption status, and BMI) as explanatory variables and the detected microbial features as response were tested by the [MaAsLin R package](https://bitbucket.org/biobakery/maaslin/src/default/).
+
 To run the analysis simustaneusly we use....
 
 >>>
