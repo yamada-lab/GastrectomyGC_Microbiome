@@ -287,4 +287,6 @@ def test_svm(cls,feats,cl_sl,boots,fract_sample,lda_th,tol_min,nsvm):
 
 
 ####Notes###
+#script were modified from the original LefSe script
+#modifications enable the FDR calculations
 #All of the modifications will be marked with "###"
