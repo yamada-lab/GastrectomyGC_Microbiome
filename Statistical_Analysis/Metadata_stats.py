@@ -10,7 +10,6 @@ example of reference
 ID  BMI age 
 1.Gastrectomy   20  52
 2.Healthy   18  67
-
 '''
 
 import matplotlib as plotlt
