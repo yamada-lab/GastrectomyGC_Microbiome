@@ -16,7 +16,7 @@ Functional annotations were carried out in our in house pipeline (KEGG-based) an
 
 ### KEGG-based
 
-We annotated the functional modules using our *in house* pipeline. Please find the manuscript(Supplementary material) for detail processes. The code were available upon request. 
+We annotated the functional modules using our *in house* pipeline. Please find the manuscript **(Supplementary material)** for detail processes. The code were available upon request. 
 
 ### HUMAnN2
 
