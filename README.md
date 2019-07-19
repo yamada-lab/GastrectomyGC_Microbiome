@@ -55,6 +55,23 @@ The associations coefficient (variance explained) between the demographic data (
 * **Statistical differences in demographic data**
 
 The statistical differences were tested for the demographic data between healthy control and gastrectomy group to test the nature of the confounding factors. The two-sided MWU test (scipy.stats.mannwhitneyu version 0.18.1) was performed on numerical data (BMI, age, and dietary component information) and Fisher’s exact test (FisherExact 1.4.2) was performed on categorical data (gender, smoking status, and alcohol consumption status).
+The script (writen in python 2.7.13) can be found in `Statistical_Analysis/Metadata_stats.py`. The package needed to run the scipt
+>>>
+* matplotlib
+* pandas
+* numpy
+* seaborn
+* statsmodel
+* scipy
+* FisherExact
+* math
+* collections
+>>>
+
+usage:
+```python
+python ./Statistical_Analysis/Metadata_stats.py metadata_table reference columns_to_test(e.g BMI, age,etc)
+```
 
  
 
