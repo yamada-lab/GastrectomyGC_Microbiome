@@ -5,10 +5,11 @@ Taxonomic annotations were carried out using two different tools named [mOTU](ht
 
 ### mOTU
 The high-quality reads were subjected to mapping against the mOTU.v1.padded database using sequence identity and alignment cutoffs of 97% and 45 bp, respectively.
+The annotations were run following the instruction in [mOTU](https://motu-tool.org/) tutorial.
 
 ### MetaPhlan2
 High-quality reads were mapped to unique clade-specific marker genes identified from ~17,000 reference genomes (~13,500 bacterial and archaeal, ~3,500 viral, and ~110 eukaryotic). 
-For annotations using MetaPhlan2, please see the HUMAnN2 part in the Functional annotations
+For annotations using MetaPhlan2, please see the HUMAnN2 part in the functional annotations.
 
 ## Functional annotations
 Functional annotations were carried out in our in house pipeline (KEGG-based) and [HUMAnN2](https://bitbucket.org/biobakery/humann2/wiki/Home)
