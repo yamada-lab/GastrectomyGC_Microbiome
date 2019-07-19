@@ -64,7 +64,7 @@ qsub -l mem=4G -pe smp 8 HUMAnN2_pipeline.sh <sequence_id> <directory_out> <dire
 
     The associations coefficient (variance explained) between the demographic data (groups, age, gender, smoking status, alcohol consumption status, and BMI) as explanatory variables and the detected microbial features as response were tested by the [MaAsLin R package](https://bitbucket.org/biobakery/maaslin/src/default/).
 
-To run the analysis simustaneusly we use....
+To run the analysis simultaneously we use....
 
 >>>
 packages:
@@ -105,13 +105,18 @@ usage:
 python ./Statistical_Analysis/Metadata_stats.py metadata_table reference columns_to_test(e.g BMI, age,etc)
 ```
 
- 
-
-
-
 
 ### Correlations 
+* **Species - species or Genus - Genus Correlation**
 
+We estimated the microbial association in each of group using [SparCC](https://bitbucket.org/yonatanf/sparcc/src/default/)
+Custom script for runing in SGE system were available at `Data_Analysis/SparCC_corr.sh`
+usage:
+```bash
+qsub -cwd Data_Analysis/SparCCAllSpec.sh <Species/genus_relative abundance table> <List of selected species/genus>
+```
+After the calculations, the results were visualized using [igraph R packages](https://igraph.org/r/) and the script were available here `insert the script` 
+* 
 
 ## Command options for other tools
 
