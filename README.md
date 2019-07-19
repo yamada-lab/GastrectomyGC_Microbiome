@@ -1,5 +1,13 @@
 # Gastrectomy Project Data Analysis
 
+The **GastrectomyProject_Custom_Script** contains code to perform analysis for the gastrectomy paper.
+Annotations table for microbial features (taxon, modules, and metabolites), reads profile table, subjects ID, and metadata table were availabe here `please insert the directory`. 
+The raw sequencing data reported in this paper has been deposited at the DNA Data Bank of Japan (DDBJ) Sequence Read Archive (DRA), Tokyo, Japan under accession numbers **DRA007281, DRA008243, DRA006684, and DRA008156**. 
+
+##High quality reads process
+The raw reads were subjected for the quality filtering before going to the annotations process. Please find the explanations of the process in **(Supplementary Material)**. 
+The code were available in `High_quality_filtering/hq_reads.sh`
+
 ## Taxonomic annotations 
 Taxonomic annotations were carried out using two different tools named [mOTU](https://motu-tool.org/) and [MetaPhlan2](https://bitbucket.org/biobakery/metaphlan2/src/default/)
 
