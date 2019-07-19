@@ -3,6 +3,11 @@
 import os,sys,math,pickle
 from lefse_modif import *
 
+####Notes###
+#Modification by Erawijantari-Titech
+#Script were modified from the original LEfSe script to enable the FDR calculations and writing to the output
+#All of the modifications were marked with "###"
+
 def read_params(args):
         parser = argparse.ArgumentParser(description='LEfSe 1.0')
         parser.add_argument('input_file', metavar='INPUT_FILE', type=str, help="the input file")
@@ -140,5 +145,4 @@ if __name__ == '__main__':
 	###
 
 
-####Notes###
-#All of the modifications will be marked with "###"
+
