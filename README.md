@@ -29,7 +29,6 @@ We annotated the functional modules using our *in house* pipeline. Please find t
 ### HUMAnN2
 
 Custom scripts for runing in SGE system:  `HUMAnN2_pipeline.sh`.
-For runing the scripts you need to specify
 The format of the high quality reads should be `Sample_ID.samenames.fastq` or `Sample_ID.samenames.fastq.gz`
 * `$1` : Sample ID
 * `$2` : directory for the output
@@ -102,7 +101,7 @@ outputs:
 
 usage:
 ```python
-python ./Statistical_Analysis/Metadata_stats.py metadata_table reference columns_to_test(e.g BMI, age,etc)
+python ./Data_Analysis/Metadata_stats.py metadata_table reference columns_to_test(e.g BMI, age,etc)
 ```
 
 
@@ -113,7 +112,7 @@ We estimated the microbial association in each of group using [SparCC](https://b
 Custom script for runing in SGE system were available at `Data_Analysis/SparCC_corr.sh`
 usage:
 ```bash
-qsub -cwd Data_Analysis/SparCC_corr.sh <Species/genus_relative abundance table> <List of selected species/genus>
+qsub -cwd ./Data_Analysis/SparCC_corr.sh <Species/genus_relative abundance table> <List of selected species/genus>
 ```
 After the calculations, the results were visualized using [igraph R packages](https://igraph.org/r/) and the script were available here `insert the script` 
 * 
