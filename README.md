@@ -58,7 +58,11 @@ qsub -l mem=4G -pe smp 8 HUMAnN2_pipeline.sh <sequence_id> <directory_out> <dire
     *  **LEfSe**
 
     The differences in microbiome features (taxonomy, KO modules) relative abundance were calculated by linear discriminant analysis (LDA) effect size [LEfSe](https://bitbucket.org/biobakery/biobakery/wiki/lefse). LEfSe first identifies features that are statistically different between healthy and gastrectomy groups using the non-parametric Kruskal–Wallis sum-rank test (P≤0.05). We modified the default calculation by controlling the multiple testing using Benjamini–Hochberg (BH) false discovery rate (FDR) correction procedure. All of the modification can be found in `LEfSe_Modif`.
-    The script for runing LEfSe presented in the manuscript together with the parameter were written in `LEfSe_Modif/LEfSeRun.sh`
+    The script for runing LEfSe presented in the manuscript together with the parameter were written in `LEfSe_Modif/LEfSeRun.sh`.
+    usage example in SGE:
+    ```
+    qsub -cwd LEfSeRun.sh <columns for annotations samples> <input table contains the relative abundance> <Category analysis> <prefix for title>
+    ```
 
     *  **MaAsLin**
 
