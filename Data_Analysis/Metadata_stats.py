@@ -89,48 +89,17 @@ def stat_diff_cat(dictionary,Healthy,Gastrectomy):
 	#calc_dict['oddsratio']=hyp_test[0]
 
 	return calc_dict
-#old
-#for tab in fileref:
-#	tab2		= tab.split("\t")[1][:-1]
-#	pat_ID 		= tab2.split('.')[1].split('-')[0]
-#	if pat_ID not in file_conv:
-#		file_conv[pat_ID]=tab2
-
-#new
-patID_l1 =[]
-
-
-for tab in fileref:
-	pat_ID 		= (tab.split("\t")[0]).strip()
-	patID_l1.append(pat_ID)
-	stage 		= (tab.split("\t")[1]).strip()
-	newID 		= pat_ID+'_'+stage
-	if pat_ID not in file_conv:
-		file_conv[pat_ID]=newID
-patID_l = [int(y) for y in patID_l1]
-print patID_l
-path=open(argvs[1])
-df_table1=((pd.read_table(path,index_col=0,error_bad_lines=False))).loc[patID_l]
-df_table = df_table1.transpose()
-#change the name
-row=(df_table.columns.values)
-row2 = [str(x) for x in row]
-
-for y in row2:
-	if y in file_conv:
-		df_table.columns = df_table.columns.astype(str)
-		df_table.columns=df_table.columns.str.replace(y,file_conv[y])
-	else:
-		print "None"
-
 #remove all of the row that contain zero value
-df_table_Tpose = df_table.transpose()
+path=open(argvs[1])
+df_table_Tpose=((pd.read_table(path,index_col=0,error_bad_lines=False)))
+#df_table_Tpose = df_table.transpose()
 
 list_sample = df_table_Tpose.index.values
+print list_sample
 
 list_stage_n 	= []
 for x in list_sample:
-	stage 		= str(x).split('_')[1]
+	stage 		= str(x).split('.')[1]
 	list_stage_n.append(stage)
 df_table_Tpose['category'] = list_stage_n
 
@@ -169,3 +138,8 @@ for cat in list_feature:
 	out_calc 			= str(cat)+'.statscalc'+'.tsv'
 	df_calc 			= pd.DataFrame.from_dict(calcres,orient='index')	
 	df_calc.to_csv(out_calc,header=True, index=True, sep='\t')
+
+
+
+	#example:
+	#stime python ~/gut_microbiome_analysis/script/ReRunOrganized/StastViz/Metadata_stats.py 190822_MetadataMetaDis.tsv /home/pande/gut_microbiome_analysis/gastrectomy_early/list_data/2018-10-21_sampleID_seqIDNoEMR All
