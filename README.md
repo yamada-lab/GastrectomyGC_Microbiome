@@ -67,18 +67,30 @@ qsub -l mem=4G -pe smp 8 HUMAnN2_pipeline.sh <sequence_id> <directory_out> <dire
 
     *  **MaAsLin**
 
-    The associations coefficient (variance explained) between the demographic data (groups, age, gender, smoking status, alcohol consumption status, and BMI) as explanatory variables and the detected microbial features as response were tested by the [MaAsLin R package](https://bitbucket.org/biobakery/maaslin/src/default/).
+    The associations coefficient (variance explained) between the possible confounding effects of clinical parameters (BMI, serum glucose and total cholesterol), demographic data (e.g age, gender) and medical history (e.g history of drug consumption and diseases) as explanatory variables and the detected microbial features as response were tested by the [MaAsLin R package](https://bitbucket.org/biobakery/maaslin/src/default/).
 
-To run the analysis simultaneously we use....
+To run the analysis simultaneously we use `Data_Analysis/MaAsLinRun.sh`
 
->>>
-packages:
-
-input:
-
-outputs
 
 >>>
+
+input: 
+* relative abundance tables (species, KEGG modules, metabolites)
+* metadata files contains the samples ID and clinical informations (BMI, Age, Gender, etc.)
+* selected samples ID
+* statistic results from `LEfSeRun.sh`
+
+outputs:
+* microbial features associations with the metadata
+* graph for associations coefficient (crude vs adjusted)  
+>>>
+  
+
+The script for runing MaAsLin presented in the manuscript together with the parameter were written in `LEfSe_Modif/LEfSeRun.sh`.
+usage example in SGE:
+    ```
+    qsub -cwd MaAsLin.sh <input table contains the relative abundance> <metadata tables> <prefix for title> <selected ID> <statistic tables from LEfSe>
+    ```
 
 
 * **Statistical differences in demographic data**
