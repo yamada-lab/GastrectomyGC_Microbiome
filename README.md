@@ -89,10 +89,7 @@ outputs:
 The script for runing MaAsLin presented in the manuscript together with the parameter were written in `LEfSe_Modif/LEfSeRun.sh`.
 usage example in SGE:
     
-    ```
-    
-    qsub -cwd MaAsLin.sh <input table contains the relative abundance> <metadata tables> <prefix for title> <selected ID> <statistic tables from LEfSe>
-    ```
+    ```qsub -cwd MaAsLin.sh <input table contains the relative abundance> <metadata tables> <prefix for title> <selected ID> <statistic tables from LEfSe>```
 
 
 * **Statistical differences in demographic data**
