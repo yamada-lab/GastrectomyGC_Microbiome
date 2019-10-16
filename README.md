@@ -76,7 +76,7 @@ To run the analysis simultaneously we use `Data_Analysis/MaAsLinRun.sh`
 
 input: 
 * relative abundance tables (species, KEGG modules, metabolites)
-* metadata files contains the samples ID and clinical informations (BMI, Age, Gender, etc.)
+* metadata files contains the samples ID and clinical informations (BMI, Age, Gender, etc.) `Metadata_Tables.txt`
 * selected samples ID
 * statistic results from `LEfSeRun.sh`
 
@@ -88,7 +88,9 @@ outputs:
 
 The script for runing MaAsLin presented in the manuscript together with the parameter were written in `LEfSe_Modif/LEfSeRun.sh`.
 usage example in SGE:
+    
     ```
+    
     qsub -cwd MaAsLin.sh <input table contains the relative abundance> <metadata tables> <prefix for title> <selected ID> <statistic tables from LEfSe>
     ```
 
