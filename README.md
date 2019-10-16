@@ -58,7 +58,7 @@ qsub -l mem=4G -pe smp 8 HUMAnN2_pipeline.sh <sequence_id> <directory_out> <dire
 * **Univariate statistic for differential relative abundance analysis**
     *  **LEfSe**
 
-    The differences in microbiome features (taxonomy, KO modules) relative abundance were calculated by linear discriminant analysis (LDA) effect size [LEfSe](https://bitbucket.org/biobakery/biobakery/wiki/lefse). LEfSe first identifies features that are statistically different between healthy and gastrectomy groups using the non-parametric Kruskal–Wallis sum-rank test (P≤0.05). We modified the default calculation by controlling the multiple testing using Benjamini–Hochberg (BH) false discovery rate (FDR) correction procedure. All of the modification can be found in `LEfSe_Modif`.
+    The differences in microbiome features (taxonomy, KO modules) relative abundance were calculated by linear discriminant analysis (LDA) effect size [LEfSe](https://bitbucket.org/biobakery/biobakery/wiki/lefse). LEfSe first identifies features that are statistically different between control and gastrectomy groups using the non-parametric Kruskal–Wallis sum-rank test (P≤0.05). We modified the default calculation by controlling the multiple testing using Benjamini–Hochberg (BH) false discovery rate (FDR) correction procedure. All of the modification can be found in `LEfSe_Modif`.
     The script for runing LEfSe presented in the manuscript together with the parameter were written in `LEfSe_Modif/LEfSeRun.sh`.
     usage example in SGE:
     ```
@@ -94,7 +94,7 @@ usage example in SGE:
 
 * **Statistical differences in demographic data**
 
-The statistical differences were tested for the demographic data between healthy control and gastrectomy group to test the nature of the confounding factors. The two-sided MWU test (scipy.stats.mannwhitneyu version 0.18.1) was performed on numerical data (BMI, age, and dietary component information) and Fisher’s exact test (FisherExact 1.4.2) was performed on categorical data (gender, smoking status, and alcohol consumption status).
+The statistical differences were tested for the demographic data between control and gastrectomy group to test the nature of the confounding factors. The two-sided MWU test (scipy.stats.mannwhitneyu version 0.18.1) was performed on numerical data (BMI, age, and dietary component information) and Fisher’s exact test (FisherExact 1.4.2) was performed on categorical data (gender, smoking status, and alcohol consumption status).
 The script (writen in python 2.7.13) can be found in `Data_Analysis/Metadata_stats.py`.
 >>>
 packages:
@@ -120,6 +120,12 @@ usage:
 ```python
 python ./Data_Analysis/Metadata_stats.py metadata_table reference columns_to_test(e.g BMI, age,etc)
 ```
+
+* **PERMANOVA analysis on demographic data**
+
+The overall species, KEGG modules and metabolites distribution were tested for the demographic data between different categorical or numerical grouping based on metadata. 
+The script (writen in R) can be found in `Data_Analysis/PERMANOVA.R`.
+
 
 
 ### Correlations 
