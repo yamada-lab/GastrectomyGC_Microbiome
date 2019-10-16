@@ -124,7 +124,24 @@ python ./Data_Analysis/Metadata_stats.py metadata_table reference columns_to_tes
 * **PERMANOVA analysis on demographic data**
 
 The overall species, KEGG modules and metabolites distribution were tested for the demographic data between different categorical or numerical grouping based on metadata. 
-The script (writen in R) can be found in `Data_Analysis/PERMANOVA.R`.
+
+>>>
+packages:
+* phyloseq
+* ggplot2
+* pylr
+* vegan
+* tidyverse
+
+input:
+* relative abundance table
+* metadata table
+
+outputs:
+* PERMANOVA table test
+
+>>>
+The script (writen in R and can be run at Rstudio) can be found in `Data_Analysis/PERMANOVA.R`. 
 
 
 
