@@ -27,6 +27,30 @@ def read_params(args):
 	params = vars(args)
 	return params 
 
+def read_dataframe(path_matrix):
+	matrix_raw 			= path_matrix
+	matrix_bef 			= pd.read_table(matrix_raw,index_col=0)
+	feature_list		= matrix_bef.index.values
+
+	if 'C00158_Citrate' in feature_list:
+		matrix1 		= matrix_bef.drop(['C00158_Citrate'],axis=0, inplace=False)
+	else:
+		matrix1 		= matrix_bef
+
+	if '-1' in feature_list:
+		matrix1 		= matrix1.drop(['-1'],axis=0, inplace=False)
+	else:
+		matrix1 		= matrix_bef
+
+	#removing if the 'mean, std' were in dataframe
+	try:
+		matrix2  		= matrix1.drop(['mean','std'],axis=1,inplace=False)
+	except:
+		matrix2 		= matrix1
+		matrix 	 		= matrix2.fillna(0)
+		#matrix 			= matrix2.apply(lambda x:x-x.mean())
+	return matrix
+
 def IDdropStage(df,dictOfElements,valueToFind):
 	listOfKeys = list()
 	listOfItems = dictOfElements.items()
@@ -83,7 +107,7 @@ def RelAbCalc(df):
 
 if __name__ == '__main__':
 	params = read_params(sys.argv)
-	df_table= pd.read_table(open(params['input_file']),index_col=0)
+	df_table= read_dataframe(params['input_file'])
 	RefFile = open(params['RefFile'])
 	drop = params['DropList']
 	title 	= str(params['out_file'])
@@ -110,22 +134,23 @@ if __name__ == '__main__':
 	
 
 	columns_name 	=(list(df_remove.columns.values))
-
 	add_row 		= []
+
 	for columns in columns_name:
 		add 		= refname[columns]
 		add_row.append(add.strip())
-
+	try:
+		del df_remove.index.name
+	except:
+		print "No index name"
 	df_remove.to_csv(outtitle,header=True, index=True, sep='\t')
 	df_remove.columns = pd.MultiIndex.from_tuples(zip(add_row, columns_name),names=['Class','Subject_ID'])
+	print outtitle2
 	df_remove.to_csv(outtitle2,header=True, index=True, sep='\t')
 
 
 ###example###
 #python ~/gut_microbiome_analysis/script/matrix_generator/DropChange.py 2018-07-25_annotated.mOTU.abundances.7.0.0001.up.tsv ../../list_data/2018-07-18_sampleID_seqID.txt 1 EMR_ESD	
-
-#edited Nov, 22
-#add the -r for relative abundance calculation
 
 
 
