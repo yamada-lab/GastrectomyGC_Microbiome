@@ -1,19 +1,19 @@
 # Gastrectomy Project Data Analysis
 
 The **GastrectomyProject_Custom_Script** contains code to perform analysis for the gastrectomy paper.
-Annotations table for microbial features (taxon, modules, and metabolites), reads profile table, subjects ID, and metadata table were availabe here `please insert the directory`. 
+Annotations table for microbial features (taxon, modules, and metabolites), reads profile table, subjects ID, and metadata table were availabe here `./Raw_Data`. 
 The raw sequencing data reported in this paper has been deposited at the DNA Data Bank of Japan (DDBJ) Sequence Read Archive (DRA), Tokyo, Japan under accession numbers **DRA007281, DRA008243, DRA006684, and DRA008156**. 
 Bellow the example usage of sripts will be given. For several shell scripts (.sh), the code can be run in the terminal by ignoring the `qsub -cwd <options for qsub>`. Make sure to make script executable by using `chmod +x` command. 
 
 ## High quality reads process
-The raw reads were subjected for the quality filtering before going to the annotations process. Please find the explanations of the process in **(Supplementary Material)**. 
-The code were available in `High_quality_filtering/hq_reads.sh`
+The raw reads were subjected for the quality filtering before going to the annotations process. Please find the explanations of the process in **(Supplementary Methods)**. 
+The code were available in `./High_quality_filtering/hq_reads.sh`
 
 ## Taxonomic annotations 
 Taxonomic annotations were carried out using two different tools named [mOTU](https://motu-tool.org/) and [MetaPhlan2](https://bitbucket.org/biobakery/metaphlan2/src/default/)
 
 ### mOTU
-The high-quality reads were subjected to mapping against the mOTU.v1.padded database using sequence identity and alignment cutoffs of 97% and 45 bp, respectively.
+The high-quality reads were subjected to map against the mOTU.v1.padded database using sequence identity and alignment cutoffs of 97% and 45 bp, respectively.
 The annotations were run following the instruction in [mOTU](https://motu-tool.org/) tutorial.
 
 ### MetaPhlan2
@@ -25,7 +25,7 @@ Functional annotations were carried out in our in house pipeline (KEGG-based) an
 
 ### KEGG-based
 
-We annotated the functional modules using our *in house* pipeline. Please find the manuscript **(Supplementary material)** for detail processes. The code were available upon request. 
+We annotated the functional modules using our *in house* pipeline. Please find the manuscript **(Supplementary Methods)** for detail processes. The code were available upon request. 
 
 ### HUMAnN2
 
@@ -44,6 +44,12 @@ qsub -l mem=4G -pe smp 8 HUMAnN2_pipeline.sh <sequence_id> <directory_out> <dire
 
 ## Other annotations
 ### Oral microbes
+We categorized the mOTU-annotated species and MetaPhlAn2-annotated species into oral microbes or others or others based on the [expanded Human Oral Microbiome Database (eHOMD)](http://www.homd.org/).
+The tabularized file were downloaded from `http://www.homd.org/?name=HOMD`. If the species were matched with the species name in the table, we categorized the species as `oral`, while unmatched species were categorized as `other`.
+We later calculate the total relative abundance of species labeled as `oral` in each group (Gastrectomy, n=50; Control, n=56) and performed statistical test (Mann Whitney-U) to compare the two groups.
+Custom script for runing the categorizations and statistical test were available at `./Data_Analysis/Stat_OralOther.py`
+Example usage:
+```python Stat_OralOther.py <species_table> <oral_spec_table>```
 
 ### Phenotype annotations (BugBase)
 
