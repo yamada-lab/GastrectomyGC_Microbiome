@@ -199,7 +199,7 @@ After the calculations, the results were visualized using [igraph R packages](ht
 
 
 ## Figure and Tables script's guide 
-### Figure
+### Figures
 Below are the list of script and its usage to generate the raw version of figure's and supplementary figure's element.
 - **Fig. 1A,B,D; Supplementary Figure S8 A**: *script*: ./Data_Analysis/PCoA_viz.R ; *usage*: `Rscript ./Data_Analysis/PCoA_viz.R`; the path were specified inside the script 
 - **Fig. 1C**: ./Data_Analysis/BetaDiver_boxplot.py; *usage*: `python ./Data_Analysis/BetaDiver_boxplot.py <species relative abundance table>`
@@ -213,5 +213,9 @@ Below are the list of script and its usage to generate the raw version of figure
 - **Fig 5A,B; Supplementary Figure S5**: ./Data_Analysis/SparCC-Network.R;  the path and customization were specified inside the script
 - **Fig 5C**: ./Data_Analysis/Spearman_CorrGenus-Metab.py; please see the script that enable various customization
 - **Supplementary Figure S2**:
+- **Supplememntary Figure S4**:
 - **Supplementary Figure S6**:
 - **Supplementary Figure S9,S10**:
+
+###Tables
+
