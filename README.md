@@ -1,9 +1,12 @@
 # Gastrectomy Project Data Analysis
 **Author: Pande Putu Erawijantari**
+
 **School of Life Science and Technology, Tokyo Institute of Technology**
 
 **contact**
+
 **e-mail:erawijantari.p.aa@m.titech.ac.jp**
+
 **twitter:@erawijantaript**
 
 The **GastrectomyProject_Custom_Script** contains collection of scripts to perform analysis for the gastrectomy paper.
