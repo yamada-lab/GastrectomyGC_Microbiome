@@ -49,7 +49,9 @@ The tabularized file were downloaded from `http://www.homd.org/?name=HOMD`. If t
 We later calculate the total relative abundance of species labeled as `oral` in each group (Gastrectomy, n=50; Control, n=56) and performed statistical test (Mann Whitney-U) to compare the two groups.
 Custom script for runing the categorizations and statistical test were available at `./Data_Analysis/Stat_OralOther.py`
 Example usage:
-```python Stat_OralOther.py <species_table> <oral_spec_table>```
+```
+python Stat_OralOther.py <species_table> <oral_spec_table>
+```
 
 ### Phenotype annotations (BugBase)
 
