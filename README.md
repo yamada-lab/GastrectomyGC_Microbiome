@@ -200,5 +200,8 @@ After the calculations, the results were visualized using [igraph R packages](ht
 
 ## Figure and Tables script's guide 
 ### Figure
-- **Fig. 1A,B,D**: `./Data_Analysis/PCoA_viz.R`
-- **Fig. 1C**: ``
+- **Fig. 1A,B,D**: *script*: ./Data_Analysis/PCoA_viz.R ; *usage*: `Rscript ./Data_Analysis/PCoA_viz.R`; the path were specified inside the script 
+- **Fig. 1C**: ./Data_Analysis/BetaDiver_boxplot.py; *usage*: `python ./Data_Analysis/BetaDiver_boxplot.py <species relative abundance table>`
+- **Fig. 2A,B,C,D: ./Data_Analysis/alpha_diversity_boxplot.py; *usage*: `python ./Data_Analysis/alpha_diversity_boxplot.py <species relative abundance table> <metric e.g shannon,chao1>
+- **Fig. 2E,F**: ./Data_Analysis/alpha_phylum.py; *usage*: `python ./Data_Analysis/alpha_phylum.py <species relative abundance table with taxon level>
+- 
