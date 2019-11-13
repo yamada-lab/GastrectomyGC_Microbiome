@@ -1,0 +1,4 @@
+library(mimosa)
+
+contrib_dat2 = humann2_format_contributions("input/190404_HUMAnN2_stratified.tsv")
+write.table(contrib_dat2, file='input/190404_Humann2PicrustGene.tsv', quote=FALSE, sep='\t', col.names = NA)
