@@ -1,8 +1,8 @@
 #!/usr/bin/python
-#13 February 2017
+#13 February 2017 --> modified Jan 22, 2019
 #This code was perform to calculate the alpha diversity followed by statistcal test
 #only for interested phylum
-#ussage python alpha_phylum.py matrix_table reference_table
+#ussage python alpha_phylum.py matrix_tableTaxonlevel
 
 from scipy.stats import mannwhitneyu
 from math import log
@@ -21,13 +21,12 @@ from statsmodels.sandbox.stats.multicomp import multipletests
 #get the essentials information of the inputed data
 argvs 			= sys.argv
 matrix_raw 		= argvs[1]
-reference 	 	= open(argvs[2])
-method_select 	= str(argvs[3])
+method_select 	= str(argvs[2])
 matrix_bef 		= pd.read_table(matrix_raw,index_col=0)
 title 			= str(argvs[1].split(".csv")[0])
-outtitle1		= title+'.phylum_alpha_'+method_select+'.1.csv'
-outtitle2 		= title+'.phylum_stat.alpha_'+method_select+'.1.csv'
-outfig	 		= title+'phylum_boxplot.'+method_select+'.1.eps'
+outtitle1		= title+'.phylum_alpha_'+method_select+'.noref.csv'
+outtitle2 		= title+'.phylum_stat.alpha_'+method_select+'.noref.csv'
+outfig	 		= title+'phylum_boxplot.'+method_select+'.noref.eps'
 #writer 		= pd.ExcelWriter(title+"variance_scatter.xlsx", engine='xlsxwriter')
 list_feature 	= matrix_bef.index.values
 stage 			= matrix_bef.columns.values
@@ -40,27 +39,25 @@ except:
 matrix_Tpose 	= matrix.transpose()
 #sample_matrix 	= matrix_Tpose.as_matrix()
 list_sample		= matrix_Tpose.index.values
+list_spec 		= matrix_Tpose.columns.values
 normal_1		= (matrix[matrix.columns[matrix.columns.to_series().str.contains('Healthy')]])
 surgery_1 		= (matrix[matrix.columns[matrix.columns.to_series().str.contains('Gastrectomy')]])
 
 #cretate the dictionary with key : Family; value: list of specides
-#fam_list		= ['Bacteroidetes','Firmicutes','Proteobacteria','Actinobacteria','Euryarchaeota','Fusobacteria','Verrucomicrobia']
-fam_list		= ['Bacteroidetes','Firmicutes','Proteobacteria','Actinobacteria','Fusobacteria']
-fam_dict 		= {}
+#phy_list		= ['Bacteroidetes','Firmicutes','Proteobacteria','Actinobacteria','Euryarchaeota','Fusobacteria','Verrucomicrobia']
+phy_list		= ['Bacteroidetes','Firmicutes','Proteobacteria','Actinobacteria','Fusobacteria']
+phy_dict 		= {}
 all_fam 		= {}
-for column in reference:
-	spec_code 	= (column[:-1].split("\t"))[-1]
-	family 	 	= ((column[:-1].split("\t"))[2])
-
-	if family in fam_list and spec_code in list_feature:
-		if family not in fam_dict:
-			fam_dict[family] = []
-			if ("NA" in spec_code)!=True and spec_code not in fam_dict[family]:
-				fam_dict[family].append(spec_code)
-		else:
-			if ("NA" in spec_code)!=True and spec_code not in fam_dict[family]:
-				fam_dict[family].append(spec_code)
-
+for column in list_spec:
+	phylum_get	 	= column.split('|')[1]
+	if "p__" in phylum_get:
+		phylum=phylum_get.split("__")[1]
+	else:
+		phylum=phylum_get
+	if phylum in phy_list:
+		if phylum not in phy_dict:
+			phy_dict[phylum] = []
+		phy_dict[phylum].append(column)
 
 #function
 #calculate the alpha diversity for each family
@@ -80,7 +77,7 @@ def stat_diff(dictionary,normal,surgery,family,method):
 			normal.append(y)
 		else:
 			surgery.append(y)
-	hyp_test 			= mannwhitneyu(np.array(normal),np.array(surgery))
+	hyp_test 			= mannwhitneyu(np.array(normal),np.array(surgery),alternative='two-sided')
 	p_value 			= hyp_test[1]
 	stat_list.append(p_value)
 	#print p_value
@@ -110,8 +107,8 @@ df_stat 				= pd.DataFrame([])
 #initialize the dataframe for the statistical analysis
 #list of p_value
 p_val_list  			= []
-for key in fam_list:
-	each 				= fam_dict[key]
+for key in phy_list:
+	each 				= phy_dict[key]
 	df_select			= matrix_Tpose[each]
 	df_fam,result_fam 	= alpha_div(df_select,list_sample,key,method_select)
 	df_alpha 			= df_alpha.join(df_fam,how='outer')
