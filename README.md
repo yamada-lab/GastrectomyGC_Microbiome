@@ -38,7 +38,7 @@ The format of the high quality reads should be `Sample_ID.samenames.fastq` or `S
 Example usage
 
 ```bash
-qsub -l mem=4G -pe smp 8 HUMAnN2_pipeline.sh <sequence_id> <directory_out> <directory_in>
+qsub -l mem=4G -pe smp 8 ./Data_Analysis/HUMAnN2_pipeline.sh <sequence_id> <directory_out> <directory_in>
 ```
 
 
