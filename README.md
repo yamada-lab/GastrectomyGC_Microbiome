@@ -213,5 +213,5 @@ Below are the list of script and its usage to generate the raw version of figure
 - **Fig 5C**: ./Data_Analysis/Spearman_CorrGenus-Metab.py; please see the script that enable various customization
 - **Supplementary Figure S2**:./Data_Analysis/ConfoundVarExp.py; usage: `python ConfoundVarExp.py <MaAsLin result adjusted> <MaAsLin result non-adjusted> -r <relative abundance table> -s <statistic table output from LefSe>`
 - **Supplementary Figure S6**:./Data_Analysis/Procrustest.R
-- **Supplementary Figure S9,S10**:./Data_Analysis/boxplot_gastrectomyType.py; usage: `python ./Data_Analysis/boxplot_gastrectomyType.py <relative abundance table> <metadata> <output_title> <feature_of_interest> -t boxplot
+- **Supplementary Figure S9,S10**:./Data_Analysis/boxplot_gastrectomyType.py; usage: `python ./Data_Analysis/boxplot_gastrectomyType.py <relative abundance table> <metadata> <output_title> <feature_of_interest> -t boxplot`
 
