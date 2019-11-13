@@ -3,7 +3,7 @@
 
 **School of Life Science and Technology, Tokyo Institute of Technology**
 
-**contact**
+**contact:**
 
 **e-mail:erawijantari.p.aa@m.titech.ac.jp**
 
@@ -194,9 +194,10 @@ usage:
 ```bash
 qsub -cwd ./Data_Analysis/SparCC_corr.sh <Species/genus_relative abundance table> <List of selected species/genus>
 ```
-After the calculations, the results were visualized using [igraph R packages](https://igraph.org/r/) and the script were available here `insert the script` 
+After the calculations, the results were visualized using [igraph R packages](https://igraph.org/r/) and the script were available in `./Data_Analysis/SparCC-Network.R` 
 * 
 
-## Command options for other tools
 
-## Figure guide
+## Figure and Tables script's guide 
+### Figure
+- Fig 1: 
