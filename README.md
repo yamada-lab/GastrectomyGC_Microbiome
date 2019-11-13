@@ -1,5 +1,7 @@
 # Gastrectomy Project Data Analysis
-**Author: Pande Putu Erawijantari**
+**Author: Pande Putu Erawijantari
+
+School of Life Science and Technology, Tokyo Institute of Technology**
 
 **email:erawijantari.p.aa@m.titech.ac.jp**
 
