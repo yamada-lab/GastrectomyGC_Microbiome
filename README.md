@@ -200,8 +200,10 @@ After the calculations, the results were visualized using [igraph R packages](ht
 
 ## Figure and Tables script's guide 
 ### Figure
+Below are the list of script and its usage to generate the raw version of figure's and supplementary figure's element.
 - **Fig. 1A,B,D**: *script*: ./Data_Analysis/PCoA_viz.R ; *usage*: `Rscript ./Data_Analysis/PCoA_viz.R`; the path were specified inside the script 
 - **Fig. 1C**: ./Data_Analysis/BetaDiver_boxplot.py; *usage*: `python ./Data_Analysis/BetaDiver_boxplot.py <species relative abundance table>`
-- **Fig. 2A,B,C,D: ./Data_Analysis/alpha_diversity_boxplot.py; *usage*: `python ./Data_Analysis/alpha_diversity_boxplot.py <species relative abundance table> <metric e.g shannon,chao1>
-- **Fig. 2E,F**: ./Data_Analysis/alpha_phylum.py; *usage*: `python ./Data_Analysis/alpha_phylum.py <species relative abundance table with taxon level>
-- 
+- **Fig. 2A,B,C,D**: ./Data_Analysis/alpha_diversity_boxplot.py; *usage*: `python ./Data_Analysis/alpha_diversity_boxplot.py <species relative abundance table> <metric e.g shannon,chao1>`
+- **Fig. 2E,F**: ./Data_Analysis/alpha_phylum.py; *usage*: `python ./Data_Analysis/alpha_phylum.py <species relative abundance table with taxon level>`
+- **Fig. 3A,B**: ./LEfSe_Modif/plot_cladogram.modif.py; *usage*: `python ./LEfSe_Modif/plot_cladogram.modif.py <results from LEfSe *.res run toward species relative abundance table with taxon level> <output_title> --dpi 300 --format svg
+- **Fig. 3C,D**: ./Data_Analysis/Stat_OralOther.py; *usage*: `python ./Data_Analysis/Stat_OralOther.py <species relative abudance table> <table of oral species downloaded from eHOMDB>
