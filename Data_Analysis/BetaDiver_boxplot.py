@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #This code was perform to calculate the beta diversity and plot the boxplot
-#ussage python PCoAboxplot_beta_diversity.py matrix_table
+#ussage python Data_Analys.py matrix_table
 
 from scipy.stats import mannwhitneyu
 from math import log
