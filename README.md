@@ -195,9 +195,10 @@ usage:
 qsub -cwd ./Data_Analysis/SparCC_corr.sh <Species/genus_relative abundance table> <List of selected species/genus>
 ```
 After the calculations, the results were visualized using [igraph R packages](https://igraph.org/r/) and the script were available in `./Data_Analysis/SparCC-Network.R` 
-* 
+
 
 
 ## Figure and Tables script's guide 
 ### Figure
-- Fig 1: 
+- **Fig. 1A,B,D**: `./Data_Analysis/PCoA_viz.R`
+- **Fig. 1C**: ``
