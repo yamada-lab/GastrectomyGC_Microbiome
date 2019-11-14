@@ -126,35 +126,33 @@ input:
 
 
 outputs:
-* microbial features associations with the metadata
-* graph for associations coefficient (crude vs adjusted) 
+* ***StatsCombine*** : the statistical output contains the P value, q value, log10(LDA score), and enrichment shown in **Supplementary Table S5-14, S17, S18**
+* ***.svg** : plot such as shown in **Figure 3A,B**, **Figure 4A,C,**, and **Supplementary Figure 4**
 >>>    
     
 
     usage example in SGE:
+
     ```
     qsub -cwd LEfSeRun.sh <columns for annotations samples, e.g columns 1 for Control vs Gastrectomy, then type 1> <relative abundance table> <reference file> <midle pattern for title> <prefix for title> <list of ID to retrieve> <preference cut off> <relative abundance cut off>
     ```
-
-
-*  **MaAsLin**
-
+    
+    
+    *  **MaAsLin**
+    
     The associations coefficient (variance explained) between the possible confounding effects of clinical parameters (BMI, total cholesterol, diabetes medications, and gastric acids medications, age,gender), demographic data (e.g age, gender) and medical history (e.g history of drug consumption and diseases) as explanatory variables and the detected microbial features as response were tested by the [MaAsLin R package](https://bitbucket.org/biobakery/maaslin/src/default/).
-
-To run the analysis simultaneously we use `Data_Analysis/MaAsLinRun.sh`
-
+    To run the analysis simultaneously we use `Data_Analysis/MaAsLinRun.sh`
 
 >>>
-
 input: 
 * relative abundance tables (species, KEGG modules, metabolites) e. g in ./Raw_Data/Raw_Metabolome.tsv
 * metadata files contains the samples ID and clinical informations (BMI, Age, Gender, etc.) e. g in `Metadata_Tables.txt`
 * selected samples ID, files contains the selected sample ID
-* statistic results from `LEfSeRun.sh`
+* statistic results from `LEfSeRun.sh` with pattern *StatsCombine in the title
 
 outputs:
-* microbial features associations with the metadata
-* graph for associations coefficient (crude vs adjusted)  
+* microbial features associations with the metadata such as written in **Supplementary Table 10,11,12,14**
+* graph for associations coefficient (crude vs adjusted) shown in **Supplementary Figure 2**
 >>>
   
 
@@ -184,7 +182,7 @@ input:
 * metadata table in .tsv format
 
 outputs:
-* statistical test (p value)
+* statistical test (p value) shown in **Table 1**,and **Supplementary Table S1**
 * boxplot
 >>>
 
@@ -210,7 +208,7 @@ input:
 * metadata table
 
 outputs:
-* PERMANOVA table test
+* PERMANOVA table test shown in **Supplementary Table S4**
 
 >>>
 The script (writen in R and can be run at Rstudio) can be found in `Data_Analysis/PERMANOVA.R`. 
