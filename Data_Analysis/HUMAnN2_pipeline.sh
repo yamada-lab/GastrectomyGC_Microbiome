@@ -69,7 +69,7 @@ step5(){
 
 step1
 step2
-step3
+step3 #this step also can be performed after combining each sample results into one table
 step4
 #step5
 
