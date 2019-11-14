@@ -130,6 +130,7 @@ outputs:
 >>>    
 
 usage example in SGE:
+    
     ```qsub -cwd LEfSeRun.sh <columns for annotations samples, e.g columns 1 for Control vs Gastrectomy, then type 1> <relative abundance table> <reference file> <midle pattern for title> <prefix for title> <list of ID to retrieve> <preference cut off> <relative abundance cut off>```
 
 *  **MaAsLin**
