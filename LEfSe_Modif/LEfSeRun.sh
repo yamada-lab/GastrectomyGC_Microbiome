@@ -15,8 +15,8 @@ ref=$3 #reference file
 test=$4 #for title, what to test?e.g Healthy vs R-Y
 title=$5 #
 ID=$6
-cut=$7
-off=$8
+cut=$7 #preference cut off
+off=$8 #relative abundance cut off
 
 echo ${columns}_${relab}_${test}_${title}
 
