@@ -131,10 +131,12 @@ outputs:
 
 usage example in SGE:
     ```
-    qsub -cwd LEfSeRun.sh <columns for annotations samples, e.g columns 1 for Control vs Gastrectomy, then type 1> <relative abundance table> <reference file> <midle pattern for title> <prefix for title> <list of ID to retrieve> <preference cut off> <relative abundance cut off>
-    ```
-    
-*  **MaAsLin**
+qsub -cwd LEfSeRun.sh <columns for annotations samples, e.g columns 1 for Control vs Gastrectomy, then type 1> <relative abundance table> <reference file> <midle pattern for title> <prefix for title> <list of ID to retrieve> <preference cut off> <relative abundance cut off>
+```
+
+
+* 
+    * **MaAsLin**
     
     The associations coefficient (variance explained) between the possible confounding effects of clinical parameters (BMI, total cholesterol, diabetes medications, and gastric acids medications, age,gender), demographic data (e.g age, gender) and medical history (e.g history of drug consumption and diseases) as explanatory variables and the detected microbial features as response were tested by the [MaAsLin R package](https://bitbucket.org/biobakery/maaslin/src/default/).
     To run the analysis simultaneously we use `Data_Analysis/MaAsLinRun.sh`
