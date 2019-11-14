@@ -113,7 +113,7 @@ The results were shown in the **Figure 5C**, **Supplementary Figure S7**, and **
 
 ### Statistics
 * **Univariate statistic for differential relative abundance analysis**
-    *  **LEfSe**
+* **LEfSe**
 
     The differences in microbiome features (taxonomy, KO modules) relative abundance were calculated by linear discriminant analysis (LDA) effect size [LEfSe](https://bitbucket.org/biobakery/biobakery/wiki/lefse). LEfSe first identifies features that are statistically different between control and gastrectomy groups using the non-parametric Kruskal–Wallis sum-rank test (P≤0.05). We modified the default calculation by controlling the multiple testing using Benjamini–Hochberg (BH) false discovery rate (FDR) correction procedure. All of the modification can be found in `LEfSe_Modif`.
     The script for runing LEfSe presented in the manuscript together with the parameter were written in `LEfSe_Modif/LEfSeRun.sh`.
@@ -134,12 +134,10 @@ usage example in SGE:
 qsub -cwd LEfSeRun.sh <columns for annotations samples, e.g columns 1 for Control vs Gastrectomy, then type 1> <relative abundance table> <reference file> <midle pattern for title> <prefix for title> <list of ID to retrieve> <preference cut off> <relative abundance cut off>
 ```
 
+*  **MaAsLin**
 
-* 
-    * **MaAsLin**
-    
-    The associations coefficient (variance explained) between the possible confounding effects of clinical parameters (BMI, total cholesterol, diabetes medications, and gastric acids medications, age,gender), demographic data (e.g age, gender) and medical history (e.g history of drug consumption and diseases) as explanatory variables and the detected microbial features as response were tested by the [MaAsLin R package](https://bitbucket.org/biobakery/maaslin/src/default/).
-    To run the analysis simultaneously we use `Data_Analysis/MaAsLinRun.sh`
+The associations coefficient (variance explained) between the possible confounding effects of clinical parameters (BMI, total cholesterol, diabetes medications, and gastric acids medications, age,gender), demographic data (e.g age, gender) and medical history (e.g history of drug consumption and diseases) as explanatory variables and the detected microbial features as response were tested by the [MaAsLin R package](https://bitbucket.org/biobakery/maaslin/src/default/).
+To run the analysis simultaneously we use `Data_Analysis/MaAsLinRun.sh`
 
 >>>
 input: 
