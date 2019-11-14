@@ -124,7 +124,6 @@ input:
 * reference file contains the sequence ID, sample ID and clinical informations needed for test. The format can be found in ./Raw_Data/Reference_name.txt
 * selected samples ID, files contains the selected sample ID
 
-
 outputs:
 * ***StatsCombine*** : the statistical output contains the P value, q value, log10(LDA score), and enrichment shown in **Supplementary Table S5-14, S17, S18**
 * ***.svg** : plot such as shown in **Figure 3A,B**, **Figure 4A,C,**, and **Supplementary Figure 4**
@@ -134,10 +133,10 @@ outputs:
     usage example in SGE:
 
     ```
-    qsub -cwd LEfSeRun.sh <columns for annotations samples, e.g columns 1 for Control vs Gastrectomy, then type 1> <relative abundance table> <reference file> <midle pattern for title> <prefix for title> <list of ID to retrieve> <preference cut off> <relative abundance cut off>
-    ```
+    qsub -cwd LEfSeRun.sh <columns for annotations samples, e.g columns 1 for Control vs Gastrectomy, then type 1> <relative abundance table> <reference file> <midle pattern for title> <prefix for title> <list of ID to retrieve> <preference cut off> <relative abundance cut off>```
     
     
+  *  
     *  **MaAsLin**
     
     The associations coefficient (variance explained) between the possible confounding effects of clinical parameters (BMI, total cholesterol, diabetes medications, and gastric acids medications, age,gender), demographic data (e.g age, gender) and medical history (e.g history of drug consumption and diseases) as explanatory variables and the detected microbial features as response were tested by the [MaAsLin R package](https://bitbucket.org/biobakery/maaslin/src/default/).
