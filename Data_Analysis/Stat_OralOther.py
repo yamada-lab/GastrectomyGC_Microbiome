@@ -126,9 +126,9 @@ df_new = pd.DataFrame(tendency_dict)
 df_new_Tpose = df_new.transpose()
 #df_new_Tpose.index.name = 'Sample'
 #write to file
-outitle = title+'.OralOtherRatio1'+".csv"
-outfig_oral = title+'.Oral1'+".eps"
-outfig_rat 	= title+'.OralOtherRatio1'+".eps"
+outitle = title+'.OralOtherRatio'+".tsv"
+outfig_oral = title+'.Oral'+".pdf"
+outfig_rat 	= title+'.OralOtherRatio'+".pdf"
 df_new_Tpose.to_csv(outitle,header=True,index=True,sep='\t')
 writer = pd.ExcelWriter(title+'.OralOtherRatio'+".xlsx", engine='xlsxwriter')
 df_new_Tpose.to_excel(writer)
@@ -143,7 +143,7 @@ def boxplot(dataframe,list_stage,purpose,outfig):
 	sns.set(style='ticks')
 	sns.boxplot(x="stage", y=purpose, data=dataframe,linewidth=1.00,width=0.3,palette=pal)
 	sns.despine(offset=10, trim=True)
-	plt.savefig(outfig, format='eps', dpi=1000)
+	plt.savefig(outfig, dpi=500)
 
 #create the boxplot of oral bacteria and ratio
 #oral
