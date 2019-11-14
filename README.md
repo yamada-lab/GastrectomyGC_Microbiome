@@ -50,7 +50,9 @@ Both annotations generates the genes and KEGG Orthology table. We converted the 
 For module annotations we generated the reference database using the KEGG database 2017 version (available upon request).
 The annotations for each samples can be combine by utilizing the script in `./Data_Analysis/CombineMatrix.py`. For using the script the path that directed to each sample should be similar.
 For example we put the all sample under the same directory `project/results/` then the usage for the script is
-```python ./Data_Analysis/CombineMatrix.py/ project/results/ <reference file to convert the header from sample name to sample ID> <suffix pattern of the results to be combine>```
+```
+python ./Data_Analysis/CombineMatrix.py/ project/results/ <reference file to convert the header from sample name to sample ID> <suffix pattern of the results to be combine>
+```
 
 ### KEGG-based
 We annotated the functional modules using our *in house* pipeline. Please find the manuscript **(Supplementary Methods)** for detail processes. The code were available upon request. 
@@ -126,14 +128,14 @@ input:
 
 outputs:
 * microbial features associations with the metadata
-* graph for associations coefficient (crude vs adjusted)  
+* graph for associations coefficient (crude vs adjusted) 
+
 >>>    
     
     usage example in SGE:
     ```
     qsub -cwd LEfSeRun.sh <columns for annotations samples, e.g columns 1 for Control vs Gastrectomy, then type 1> <relative abundance table> <reference file> <midle pattern for title> <prefix for title> <list of ID to retrieve> <preference cut off> <relative abundance cut off>
     ```
-
 
     *  **MaAsLin**
 
