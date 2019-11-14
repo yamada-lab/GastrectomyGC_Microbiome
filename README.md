@@ -119,7 +119,6 @@ The results were shown in the **Figure 5C**, **Supplementary Figure S7**, and **
     The script for runing LEfSe presented in the manuscript together with the parameter were written in `LEfSe_Modif/LEfSeRun.sh`.
     
 >>>
-
 input: 
 * relative abundance tables (species, KEGG modules, metabolites) e. g in ./Raw_Data/Raw_Metabolome.tsv
 * reference file contains the sequence ID, sample ID and clinical informations needed for test. The format can be found in ./Raw_Data/Reference_name.txt
@@ -129,17 +128,18 @@ input:
 outputs:
 * microbial features associations with the metadata
 * graph for associations coefficient (crude vs adjusted) 
-
 >>>    
     
+
     usage example in SGE:
     ```
     qsub -cwd LEfSeRun.sh <columns for annotations samples, e.g columns 1 for Control vs Gastrectomy, then type 1> <relative abundance table> <reference file> <midle pattern for title> <prefix for title> <list of ID to retrieve> <preference cut off> <relative abundance cut off>
     ```
 
-    *  **MaAsLin**
 
-    The associations coefficient (variance explained) between the possible confounding effects of clinical parameters (BMI, serum glucose and total cholesterol), demographic data (e.g age, gender) and medical history (e.g history of drug consumption and diseases) as explanatory variables and the detected microbial features as response were tested by the [MaAsLin R package](https://bitbucket.org/biobakery/maaslin/src/default/).
+*  **MaAsLin**
+
+    The associations coefficient (variance explained) between the possible confounding effects of clinical parameters (BMI, total cholesterol, diabetes medications, and gastric acids medications, age,gender), demographic data (e.g age, gender) and medical history (e.g history of drug consumption and diseases) as explanatory variables and the detected microbial features as response were tested by the [MaAsLin R package](https://bitbucket.org/biobakery/maaslin/src/default/).
 
 To run the analysis simultaneously we use `Data_Analysis/MaAsLinRun.sh`
 
