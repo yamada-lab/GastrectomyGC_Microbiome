@@ -26,7 +26,8 @@ The reads profile before and after the process can be found in the **Supplementa
 Taxonomic annotations were carried out using two different tools named [mOTU](https://motu-tool.org/) and [MetaPhlan2](https://bitbucket.org/biobakery/metaphlan2/src/default/)
 The annotations for each samples can be combine by utilizing the script in `./Data_Analysis/CombineMatrix.py`. For using the script the path that directed to each sample should be similar.
 For example we put the all sample under the same directory `project/results/` then the usage for the script is
-```python ./Data_Analysis/CombineMatrix.py/ project/results/ <reference file to convert the header from sample name to sample ID> <suffix pattern of the results to be combine>```
+```
+python ./Data_Analysis/CombineMatrix.py/ project/results/ <reference file to convert the header from sample name to sample ID> <suffix pattern of the results to be combine>```
 ### mOTU
 The high-quality reads were subjected to map against the mOTU.v1.padded database using sequence identity and alignment cutoffs of 97% and 45 bp, respectively.
 The annotations were run following the instruction in [mOTU](https://motu-tool.org/) tutorial.
