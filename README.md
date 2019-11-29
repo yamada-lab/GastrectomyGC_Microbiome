@@ -3,11 +3,6 @@
 
 **School of Life Science and Technology, Tokyo Institute of Technology**
 
-**contact:**
-
-**e-mail:erawijantari.p.aa@m.titech.ac.jp**
-
-**twitter:@erawijantaript**
 
 The **GastrectomyProject_Custom_Script** contains collection of scripts to perform analysis for the gastrectomy paper.
 Annotations table for microbial features (taxon, modules, and metabolites), reads profile table, subjects ID, and metadata table were availabe in the `./Raw_Data`. 
