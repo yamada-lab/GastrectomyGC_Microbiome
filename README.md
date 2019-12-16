@@ -22,7 +22,7 @@ Taxonomic annotations were carried out using two different tools named [mOTU](ht
 The annotations for each samples can be combine by utilizing the script in `./Data_Analysis/CombineMatrix.py`. For using the script the path that directed to each sample should be similar.
 For example we put the all sample under the same directory `project/results/` then the usage for the script is
 ```
-python ./Data_Analysis/CombineMatrix.py/ project/results/ <reference file to convert the header from sample name to sample ID> <suffix pattern of the results to be combine>
+python ./Data_Analysis/CombineMatrix.py project/results/ <reference file to convert the header from sample name to sample ID> <suffix pattern of the results to be combine>
 ```
 
 ### mOTU
@@ -46,7 +46,7 @@ For module annotations we generated the reference database using the KEGG databa
 The annotations for each samples can be combine by utilizing the script in `./Data_Analysis/CombineMatrix.py`. For using the script the path that directed to each sample should be similar.
 For example we put the all sample under the same directory `project/results/` then the usage for the script is
 ```
-python ./Data_Analysis/CombineMatrix.py/ project/results/ <reference file to convert the header from sample name to sample ID> <suffix pattern of the results to be combine>
+python ./Data_Analysis/CombineMatrix.py project/results/ <reference file to convert the header from sample name to sample ID> <suffix pattern of the results to be combine>
 ```
 
 ### KEGG-based
@@ -81,7 +81,7 @@ We later calculate the total relative abundance of species labeled as `oral` in 
 Custom script for runing the categorizations and statistical test were available at `./Data_Analysis/Stat_OralOther.py`
 Example usage:
 ```
-python Stat_OralOther.py <species_table> <oral_spec_table>
+python ./Data_Analysis/Stat_OralOther.py <species_table> <oral_spec_table>
 ```
 The output of the script includes:
 - ***OralOtherRatio.csv** : the calculation for each samples 
@@ -111,7 +111,7 @@ The results were shown in the **Figure 5C**, **Supplementary Figure S10**, and *
 * **LEfSe**
 
     The differences in microbiome features (taxonomy, KO modules) relative abundance were calculated by linear discriminant analysis (LDA) effect size [LEfSe](https://bitbucket.org/biobakery/biobakery/wiki/lefse). LEfSe first identifies features that are statistically different between control and gastrectomy groups using the non-parametric Kruskal–Wallis sum-rank test (P≤0.05). We modified the default calculation by controlling the multiple testing using Benjamini–Hochberg (BH) false discovery rate (FDR) correction procedure. All of the modification can be found in `LEfSe_Modif`.
-    The script for runing LEfSe presented in the manuscript together with the parameter were written in `LEfSe_Modif/LEfSeRun.sh`.
+    The script for runing LEfSe presented in the manuscript together with the parameter were written in `./LEfSe_Modif/LEfSeRun.sh`.
     
 >>>
 input: 
@@ -145,7 +145,7 @@ outputs:
 >>>
   
 
-The script for runing MaAsLin presented in the manuscript together with the parameter were written in `Data_Analysis/MaAsLin.sh`.
+The script for runing MaAsLin presented in the manuscript together with the parameter were written in `./Data_Analysis/MaAsLin.sh`.
 usage example in SGE:
     
     qsub -cwd MaAsLin.sh <input table contains the relative abundance> <metadata tables> <prefix for title> <selected ID> <statistic tables from LEfSe>
