@@ -104,7 +104,3 @@
 10807	Healthy	Healthy	Healthy	Healthy	HJKFMADXX_PG0783_124A0402_H1_L002	No	Yes
 10810	Gastrectomy	Total_gastrectomy	R-Y	R-Y	HGVFFBCX2_PG2452_53A2715_H1_L001	No	No
 10850	Healthy	Healthy	Healthy	Healthy	HJKTNADXX_PG0783_147A0704_H1_L002	No	No
-10251	Gastrectomy	Subtotal_gastrectomy	NA	NA	AAAA	NA	NA
-10337	Gastrectomy	Subtotal_gastrectomy	NA	NA	HC2T7BCX2_PG2452_16A2021_H1_L002	NA	NA
-10524	Gastrectomy	Subtotal_gastrectomy	NA	NA	HC2KGBCX2_PG2452_30A2221_H1_L002	NA	NA
-10651	Gastrectomy	Subtotal_gastrectomy	NA	NA	HGVFFBCX2_PG2452_40A1816_H1_L001	NA	NA
